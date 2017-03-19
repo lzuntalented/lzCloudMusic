@@ -1,0 +1,353 @@
+html,body{
+  margin: 0 0;
+  padding: 0 0;
+}
+html{
+  font-size: 10px;
+}
+
+$prefix : "tab-container";
+
+.#{$prefix}{
+  display: flex;
+  width: 100%;
+  & > div{
+    flex:1;
+    text-align: center;
+  }
+  .active{
+    color: #d80000;
+  }
+}
+
+.tabslide-container{
+  width: 100%;
+  position: relative;
+  height: 200px;
+  overflow: hidden;
+  .slide{
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    display:flex;
+    & > div{
+      flex:1;
+    }
+  }
+  .iconfont{
+    border-radius: 50%;
+    border:1px solid red;
+    color:red;
+    padding: 5px;
+    margin: 5px 0px;
+    display: inline-block;
+    float:none;
+  }
+}
+
+.border-circle{
+  border-radius: 50%;
+}
+
+
+.img-container{
+  position: relative;
+  img{
+    width: 100%;
+  }
+  .tl{
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    color: white;
+  }
+  .tr{
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    color: white;
+  }
+  .bl{
+    position: absolute;
+    left: 0px;
+    bottom: 0px;
+    color: white;
+  }
+  .br{
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+    color: white;
+  }
+}
+
+.unit-contianer{
+  .title{
+    border-left: 3px solid red;
+  }
+
+}
+
+.grid-container{
+  .title{
+    border-left: 3px solid red;
+    padding-left: 10px;
+    margin: 5px 0px;
+  }
+  .row{
+    display: flex;
+    padding-bottom: 10px;
+    & > div{
+      flex: 1;
+      margin: 0px 5px;
+    }
+    & > div:first-child{
+      margin-left: 0px;
+    }
+
+    & > div:last-child{
+      margin-right: 0px;
+    }
+  }
+}
+
+
+// 底部音乐控件样式
+.music-container{
+  position: fixed;
+  bottom: 0px;
+  left: 0px;
+  width: 100%;
+  .bottom{
+    padding: 5px;
+    background: white;
+    position: relative;
+    img{
+      width: 40px;
+      height: 40px;
+    }
+    .content{
+      position: absolute;
+      left: 5px;
+      top:5px;
+      margin-left: 45px;
+      font-size:1.3rem;
+      .tip{
+        color: #cacaca;
+        margin-top:.5rem;
+        font-size:1rem;
+      }
+    }
+    .right-container{
+      position: absolute;
+      top: 5px;
+      right:5px;
+    }
+  }
+  .big-container{
+    background: rgba(0, 0, 0, 0.9);
+    color: white;
+    position: relative;
+    overflow: hidden;
+  }
+}
+
+.nav-container{
+  display: flex;
+  justify-content: space-between;
+  height: 45px;
+  line-height: 45px;
+  .tabs{
+    width: auto;
+    line-height: normal;
+    align-items: center;
+    & > div{
+      padding: 0px 5px;
+    }
+  }
+}
+
+.p-lr-10{
+  padding-left: 10px;
+  padding-right: 10px;
+}
+.p-tb-10{
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+.m-t-5{
+  margin-top: 5px;
+}
+.text-center{
+  text-align: center;
+}
+
+.transiton-move{
+  transition: all .3s;
+}
+
+
+// 圆环进度
+.circleProgress_wrapper{
+  width: 30px;
+  height: 30px;
+  position: relative;
+  border: 1px solid #cacaca;
+  border-radius:50%;
+  .wrapper{
+    width: 50%;
+    height: 100%;
+    position: absolute;
+    top:0;
+    overflow: hidden;
+    .circleProgress{
+      width: 200%;
+      height: 100%;
+      border:2px solid transparent;
+      border-radius: 50%;
+      position: absolute;
+      top:0;
+    }
+    .rightcircle{
+      border-top: 2px solid rgb(193, 13, 12);
+      border-right: 2px solid rgb(193, 13, 12);
+      right:0;
+    }
+    .leftcircle{
+      border-bottom:2px solid rgb(193, 13, 12);
+      border-left:2px solid rgb(193, 13, 12);
+      left:0;
+    }
+  }
+  .right{
+    right:0;
+  }
+  .left{
+    left:0;
+  }
+
+}
+
+
+.drag-progress-container{
+  height: 4px;
+  background: #d8d8d8;
+  position: relative;
+  .ended{
+    background:rgb(193, 13, 12);
+    position: absolute;
+    left: 0px;
+    top:0px;
+    height: 100%;
+    width: 0%;
+  }
+  .circle{
+    background: white;
+    position: absolute;
+    border-radius: 50%;
+    left: 0px;
+    top: 2px;
+    width: 10px;
+    height: 10px;
+    transform: translate(-50%,-50%);
+  }
+}
+
+.play-control-container{
+  position: absolute;
+  bottom: 0px;
+  width: 100%;
+  left:0px;
+  .progress{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .left{
+      padding-left: 20px;
+      padding-right: 10px;
+    }
+    .right{
+      padding-left: 10px;
+      padding-right: 20px;
+    }
+  }
+  .buts{
+    margin: 1.5rem 0px;
+    display: flex;
+    justify-content: space-around;
+  }
+}
+
+
+
+.div_play_lrc_bg{
+	width: 100%;
+	position: absolute;
+	top: 50px;
+	overflow: hidden;
+}
+
+.div_play_lrc_context{
+	margin: 0 auto;
+	margin-top: 50px;
+	width: 238px;
+	height: 238px;
+	overflow: hidden;
+	-webkit-animation: myfirst 15s infinite linear ;	/* Safari 和 Chrome */
+	animation-play-state: paused;
+  &-play{
+    animation-play-state: running;
+  }
+}
+
+@-webkit-keyframes myfirst{
+	from { -webkit-transform: rotate(0deg) ; }
+	50% { -webkit-transform: rotate(180deg) ; }
+	to { -webkit-transform: rotate(360deg); }
+}
+
+.div_play_lrc_circle{
+	background: url(./img/cm2_play_disc.png);
+	width: 238px;
+	height: 238px;
+	position: absolute;
+	top: 0px;
+}
+.div_play_lrc_img{
+	background: url(./img/img1.png);
+	position: absolute;
+	top: 41px;
+	left: 41px;
+}
+.div_lrc_control{
+	position: absolute;
+	top: -5px;
+	right: 50px;
+  transform: rotate(45deg);
+	-webkit-transform-origin-x: 0;
+	-webkit-transform-origin-y: 0;
+  transition: transform .5s;
+  &-play{
+    transform: rotate(0deg);
+  }
+}
+@-webkit-keyframes animate_lic_control{
+	from { -webkit-transform: rotate(0deg) ; }
+	to { -webkit-transform: rotate(45deg) ; }
+}
+
+@-webkit-keyframes animate_lic_control_back{
+	from { -webkit-transform: rotate(45deg) ; }
+	to { -webkit-transform: rotate(0deg) ; }
+}
+
+
+
+.list-item-container{
+  display: flex;
+  width: 100%;
+}
+
+.flex-container{
+  display: flex;
+}
