@@ -1,8 +1,8 @@
 import React from 'react';
 import { Router, Route, hashHistory } from 'react-router';
 
-import HomePage from './HomePage';
-import ListPage from './ListPage';
+import HomePage from './page/HomePage';
+import ListPage from './page/ListPage';
 
 const RouteConfig = (
     <Router history={hashHistory}>

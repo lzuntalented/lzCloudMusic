@@ -1,16 +1,17 @@
 import React, { Component } from 'react';
 import Layout from './Layout';
-import Counter from './Counter';
-import Tabs from './Tabs';
-import TabSlide from './TabSlide';
+
 import lzlog from './utils';
-import HomePage from './HomePage';
-import MusicPage from './MusicPage';
-import Icon from './Icon';
-import ListPage from './ListPage';
+
+import MusicPage from './page/MusicPage';
+
 import route from './Router'; //路由配置
 
-import './LzEvent';
+import './utils/LzEvent';
+
+import { Provider } from 'react-redux'
+import { createStore } from 'redux'
+import store from './reducers'
 
 // If you use React Router, make this component
 // render <Router> with your routes. Currently,
@@ -49,15 +50,12 @@ export default class App extends Component {
 
   render() {
     return (
-      <Layout>
-        <div className="nav-container" style={{background:'#C10D0C',color:"white"}}>
-          <Icon icon='liebiao p-lr-10' />
-          <Tabs items={this.state.items} className="tabs"></Tabs>
-          <Icon icon='sou p-lr-10' />
+      <Provider store={store}>
+        <div>
+          {route}
+          <MusicPage />
         </div>
-        {route}
-        <MusicPage />
-      </Layout>
+      </Provider>
     );
   }
 
